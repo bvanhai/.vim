@@ -76,7 +76,8 @@ package_list = {
 #  'ctrlp.vim' => 'https://github.com/kien/ctrlp.vim.git',
 #  'molokai' => 'https://github.com/tomasr/molokai.git',
 #  'dragvisuals.vim' => 'https://github.com/gavinbeatty/dragvisuals.vim.git',
-#  'vim-rng' => 'https://github.com/dahu/vim-rng.git'
+#  'vim-rng' => 'https://github.com/dahu/vim-rng.git',
+  'rust.vim' => 'https://github.com/rust-lang/rust.vim.git'
 }
 
 package_list.each do |name, link|
