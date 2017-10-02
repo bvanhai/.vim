@@ -1,7 +1,7 @@
 let g:airline#themes#behelit#palette = {}
 
 " Normal mode
-let s:N1 = [ '#121212', '#5f87ff', 233, 69  ]
+let s:N1 = [ '#121212', '#5f87ff', 233, 3 ]
 let s:N2 = [ '#5f87ff', '#262626', 69 , 235 ]
 let s:N3 = [ '#5f87ff', '#1c1c1c', 69 , 234, 'bold' ]
 let g:airline#themes#behelit#palette.normal = airline#themes#generate_color_map(s:N1, s:N2, s:N3)
@@ -10,7 +10,7 @@ let g:airline#themes#behelit#palette.normal_modified = {
       \ }
 
 " Insert mode
-let s:I1 = [ '#121212', '#00ff87', 233, 48  ]
+let s:I1 = [ '#121212', '#00ff87', 235, 71  ]
 let s:I2 = s:N2
 let s:I3 = s:N3
 let g:airline#themes#behelit#palette.insert = airline#themes#generate_color_map(s:I1, s:I2, s:I3)

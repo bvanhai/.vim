@@ -33,21 +33,19 @@ endfunction
 
 let s:bg = get(g:, 'space_vim_dark_background', 234)
 
-let s:bias = s:bg - 235
-
 let s:bg0 = s:bg - 1
 let s:bg1 = s:bg + 1
 let s:bg2 = s:bg + 2
 let s:bg3 = s:bg + 3
 let s:bg4 = s:bg + 4
 
-let s:fg = 249
+let s:fg = 248
 
-call s:hi('Normal'              , 249   , ''    , 'None')
+call s:hi('Normal'              , 248   , ''    , 'None')
 
 call s:hi('Cursor'              , 88    , 214   , 'bold')
 
-call s:hi('LineNr'              , 238+s:bias    , ''    , 'None')
+call s:hi('LineNr'              , s:bg4 , ''    , 'None')
 
 call s:hi('CursorLine'          , ''    , s:bg0 , 'None')
 call s:hi('CursorLineNr'        , 134   , s:bg0 , 'None')
@@ -70,7 +68,7 @@ call s:hi('Boolean'             , 207   , ''    , 'None')
 call s:hi('Character'           , 75    , ''    , 'None')
 call s:hi('Number'              , 176   , ''    , 'None')
 call s:hi('Float'               , 135   , ''    , 'None')
-call s:hi('String'              , 36    , ''    , 'None')
+call s:hi('String'              , 2     , ''    , 'None')
 call s:hi('Conditional'         , 68    , ''    , 'bold')
 call s:hi('Constant'            , 218   , ''    , 'None')
 call s:hi('Debug'               , 225   , ''    , 'None')
@@ -110,7 +108,7 @@ call s:hi('Search'              , 16    , 76    , 'bold')
 call s:hi('IncSearch'           , 16    , 76    , 'bold')
 call s:hi('MatchParen'          , 40    , s:bg0 , 'bold,underline')
 
-call s:hi('ModeMsg'             , 229   , ''    , 'None')
+call s:hi('ModeMsg'             , 71   , ''    , 'None')
 
 " Popup menu
 call s:hi('Pmenu'               , 141   , s:bg1 , 'None')
@@ -123,7 +121,7 @@ call s:hi('SignColumn'          , 118   , s:bg  , 'None')
 call s:hi('Todo'                , 172   , s:bg  , 'bold')
 
 " VertSplit consistent with normal background to hide it
-call s:hi('VertSplit'           , s:bg4 , ''    , 'None')
+call s:hi('VertSplit'           , s:bg1 , ''    , 'None')
 
 call s:hi('Warning'             , 136   , ''    , 'bold')
 call s:hi('WarningMsg'          , 136   , ''    , 'bold')
@@ -143,21 +141,21 @@ call s:hi('SpellLocal'          , 253   , ''    , 'underline')
 call s:hi('SpellRare'           , 218   , ''    , 'underline')
 
 call s:hi('Tag'                 , 161   , ''    , 'None')
-call s:hi('Title'               , 176   , ''    , 'None')
+call s:hi('Title'               , 3     , ''    , 'None')
 call s:hi('Structure'           , 68    , ''    , 'bold')
 call s:hi('StorageClass'        , 178   , ''    , 'bold')
 
 call s:hi('Visual'              , ''    , s:bg3 , 'None')
 call s:hi('VisualNOS'           , ''    , 238   , 'None')
 
-call s:hi('Comment'             , 30    , ''    , 'italic')
+call s:hi('Comment'             , 239   , ''    , 'italic')
 
 " tilde group
 call s:hi('NonText'             , 241   , ''    , 'None')
 
 hi link qfLineNr Type
 
-hi SVDNormal                    ctermfg=249
+hi SVDNormal                    ctermfg=248
 hi SVDDark1                     ctermfg=237
 hi SVDDark2                     ctermfg=239
 hi SVDDark3                     ctermfg=241
@@ -339,8 +337,8 @@ hi link StartifySection         SVDBlueBold
 " }
 
 " YouCompleteMe {
-hi YcmErrorSection              ctermbg=5       ctermfg=249
-hi YcmWarningSection            ctermbg=60      ctermfg=249
+hi YcmErrorSection              ctermbg=5       ctermfg=248
+hi YcmWarningSection            ctermbg=60      ctermfg=248
 " }
 
 " vim-leader-guide {
@@ -350,12 +348,12 @@ hi link LeaderGuideBrackets     SVDGreen
 " }
 
 " NERDTree {
-hi link NERDTreeCWD             Function
-hi link NERDTreeUp              SVDBlueBold
-hi link NERDTreeDir             SVDBlueBold
-hi link NERDTreeDirSlash        SVDBlueBold
-hi link NERDTreeOpenable        SVDBlueBold
-hi link NERDTreeClosable        SVDBlueBold
+call s:hi('NERDTreeCWD'         , 31   , ''    , 'None')
+hi link NERDTreeUp              NERDTreeCWD
+hi link NERDTreeDir             NERDTreeCWD
+hi link NERDTreeDirSlash        NERDTreeCWD
+hi link NERDTreeOpenable        NERDTreeCWD
+hi link NERDTreeClosable        NERDTreeCWD
 " }
 
 " Tagbar {
